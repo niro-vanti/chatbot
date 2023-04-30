@@ -7,6 +7,7 @@ sdk: streamlit
 sdk_version: 1.19.0
 app_file: chatbot_csv.py
 pinned: false
+python_version: 3.9
 ---
 
 # ChatBot-CSV 🤖
