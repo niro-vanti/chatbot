@@ -45,6 +45,8 @@ def main():
     layout.show_header()
     user_api_key = utils.load_api_key()
 
+
+
     if not user_api_key:
         layout.show_api_key_missing()
     else:
@@ -87,7 +89,9 @@ def main():
                         if query != "":
                             old_stdout = sys.stdout
                             sys.stdout = captured_output = StringIO()
-                            agent = create_csv_agent(ChatOpenAI(temperature=0), uploaded_file_content, verbose=True,
+                            agent = create_csv_agent(ChatOpenAI(temperature=0),
+                                                     uploaded_file_content,
+                                                     verbose=True,
                                                      max_iterations=4)
 
                             result = agent.run(query)
