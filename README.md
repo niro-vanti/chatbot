@@ -1,3 +1,4 @@
+---
 title: ChatCSV
 emoji: 🏢
 colorFrom: purple
@@ -6,7 +7,7 @@ sdk: streamlit
 sdk_version: 1.19.0
 app_file: chatbot_csv.py
 pinned: false
-
+---
 
 # ChatBot-CSV 🤖
 
