@@ -7,13 +7,14 @@ import sys
 import re
 from langchain.agents import create_csv_agent
 from langchain.chat_models import ChatOpenAI
-from modules.history import ChatHistory
-from modules.layout import Layout
-from modules.utils import Utilities
-from modules.sidebar import Sidebar
+from src.modules.history import ChatHistory
+from src.modules.layout import Layout
+from src.modules.utils import Utilities
+from src.modules.sidebar import Sidebar
 
-#To be able to update the changes made to modules in localhost,
-#you can press the "r" key on the localhost page to refresh and reflect the changes made to the module files.
+
+# To be able to update the changes made to modules in localhost,
+# you can press the "r" key on the localhost page to refresh and reflect the changes made to the module files.
 def reload_module(module_name):
     import importlib
     import sys
@@ -21,10 +22,11 @@ def reload_module(module_name):
         importlib.reload(sys.modules[module_name])
     return sys.modules[module_name]
 
-history_module = reload_module('modules.history')
-layout_module = reload_module('modules.layout')
-utils_module = reload_module('modules.utils')
-sidebar_module = reload_module('modules.sidebar')
+
+history_module = reload_module('src.modules.history')
+layout_module = reload_module('src.modules.layout')
+utils_module = reload_module('src.modules.utils')
+sidebar_module = reload_module('src.modules.sidebar')
 
 ChatHistory = history_module.ChatHistory
 Layout = layout_module.Layout
@@ -36,8 +38,8 @@ def init():
     load_dotenv()
     st.set_page_config(layout="wide", page_icon="💬", page_title="ChatBot-CSV")
 
-def main():
 
+def main():
     init()
     layout, sidebar, utils = Layout(), Sidebar(), Utilities()
     layout.show_header()
@@ -77,14 +79,16 @@ def main():
                             history.append("assistant", output)
 
                     history.generate_messages(response_container)
-                        
-                    if st.session_state["show_csv_agent"]:
-                        query = st.text_input(label="Use CSV agent for precise information about the structure of your csv file", placeholder="ex : how many rows in my file ?")
-                        if query != "":
 
+                    if st.session_state["show_csv_agent"]:
+                        query = st.text_input(
+                            label="Use CSV agent for precise information about the structure of your csv file",
+                            placeholder="ex : how many rows in my file ?")
+                        if query != "":
                             old_stdout = sys.stdout
                             sys.stdout = captured_output = StringIO()
-                            agent = create_csv_agent(ChatOpenAI(temperature=0), uploaded_file_content, verbose=True, max_iterations=4)
+                            agent = create_csv_agent(ChatOpenAI(temperature=0), uploaded_file_content, verbose=True,
+                                                     max_iterations=4)
 
                             result = agent.run(query)
 
@@ -103,6 +107,7 @@ def main():
                 st.error(f"Error: {str(e)}")
 
     sidebar.about()
+
 
 if __name__ == "__main__":
     main()

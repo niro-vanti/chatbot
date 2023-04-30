@@ -2,8 +2,8 @@ import os
 import pandas as pd
 import streamlit as st
 
-from modules.chatbot import Chatbot
-from modules.embedder import Embedder
+from src.modules.chatbot import Chatbot
+from src.modules.embedder import Embedder
 
 
 class Utilities:
