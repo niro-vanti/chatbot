@@ -45,8 +45,6 @@ def main():
     layout.show_header()
     user_api_key = utils.load_api_key()
 
-
-
     if not user_api_key:
         layout.show_api_key_missing()
     else:
@@ -65,6 +63,12 @@ def main():
                 )
                 st.session_state["chatbot"] = chatbot
 
+                agent = create_csv_agent(ChatOpenAI(temperature=0),
+                                         uploaded_file_content,
+                                         verbose=True,
+                                         max_iterations=4)
+                st.session_state['agent'] = agent
+
                 if st.session_state["ready"]:
                     response_container, prompt_container = st.container(), st.container()
 
@@ -78,7 +82,9 @@ def main():
                         if is_ready:
                             history.append("user", user_input)
                             output = st.session_state["chatbot"].conversational_chat(user_input)
-                            history.append("assistant", output)
+                            agent_answer = agent.run(user_input)
+                            # history.append("assistant", output)
+                            history.append("assistant", agent_answer)
 
                     history.generate_messages(response_container)
 
