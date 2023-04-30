@@ -82,9 +82,23 @@ def main():
                         if is_ready:
                             history.append("user", user_input)
                             output = st.session_state["chatbot"].conversational_chat(user_input)
-                            agent_answer = agent.run(user_input)
+
                             # history.append("assistant", output)
-                            history.append("assistant", agent_answer)
+                            old_stdout = sys.stdout
+                            sys.stdout = captured_output = StringIO()
+                            agent_answer = agent.run(user_input)
+                            sys.stdout = old_stdout
+                            thoughts = captured_output.getvalue()
+
+                            cleaned_thoughts = re.sub(r'\x1b\[[0-9;]*[a-zA-Z]', '', thoughts)
+                            cleaned_thoughts = re.sub(r'\[1m>', '', cleaned_thoughts)
+
+                            resp = cleaned_thoughts.split('Thought:')[-1].split('Final Answer')
+                            thought = resp[0]
+                            final_answer = resp[1].split('\n')[0].split(': ')[-1]
+                            agent_answer_clean = '\n'.join([thought, final_answer])
+                            full_answer = '\n'.join([output, agent_answer_clean])
+                            history.append("assistant", full_answer)
 
                     history.generate_messages(response_container)
 
