@@ -66,7 +66,7 @@ def main():
                 agent = create_csv_agent(ChatOpenAI(temperature=0),
                                          uploaded_file_content,
                                          verbose=True,
-                                         max_iterations=4)
+                                         max_iterations=15)
                 st.session_state['agent'] = agent
 
                 if st.session_state["ready"]:
