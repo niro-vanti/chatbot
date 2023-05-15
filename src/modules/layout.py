@@ -3,6 +3,18 @@ import streamlit as st
 
 class Layout:
     
+    def show_header_txt(self):
+        """
+        Displays the header of the app
+        """
+        # st.image('assets/Images/colleen-logo.png', width=400)
+        st.markdown(
+            """
+            <h1 style='text-align: center;'>LedgerGPT by Colleen.AI, Talk with your ledger data! 💬</h1>
+            """,
+            unsafe_allow_html=True,
+        )
+
     def show_header(self):
         """
         Displays the header of the app

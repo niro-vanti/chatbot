@@ -9,6 +9,10 @@ class Sidebar:
     TEMPERATURE_STEP = 0.01
 
     @staticmethod
+    def show_logo(path):
+        st.sidebar.image(path)
+
+    @staticmethod
     def about():
         about = st.sidebar.expander("About 🤖")
         sections = [
