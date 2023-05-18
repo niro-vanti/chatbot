@@ -2,6 +2,9 @@ import streamlit as st
 from langchain.chat_models import ChatOpenAI
 from langchain.chains import ConversationalRetrievalChain
 from langchain.prompts.prompt import PromptTemplate
+from langchain.agents import create_csv_agent
+from langchain.chat_models import ChatOpenAI
+from langchain.llms import OpenAI
 
 
 class Chatbot_txt:
@@ -70,6 +73,39 @@ class Chatbot:
         self.model_name = model_name
         self.temperature = temperature
         self.vectors = vectors
+
+    def conversational_chat(self, query):
+        """
+        Starts a conversational chat with a model via Langchain
+        """
+        chain = ConversationalRetrievalChain.from_llm(
+            llm=ChatOpenAI(model_name=self.model_name, temperature=self.temperature),
+            condense_question_prompt=self.CONDENSE_QUESTION_PROMPT,
+            qa_prompt=self.QA_PROMPT,
+            retriever=self.vectors.as_retriever(),
+        )
+        result = chain({"question": query, "chat_history": st.session_state["history"]})
+
+        st.session_state["history"].append((query, result["answer"]))
+
+        return result["answer"]
+
+
+class Chatbot_ledger:
+
+    def __init__(self, model_name, temperature, csv):
+        self.model_name = model_name
+        self.temperature = temperature
+        self.csv = csv
+
+    def csv_agent(self, query):
+        agent = create_csv_agent(OpenAI(temperature=self.temperature, model_name=self.model_name),
+                                 self.csv,
+                                 verbose=True,
+                                 index_col=0)
+        result = agent.run(query)
+        st.session_state['history'].append((query, result))
+        return result
 
     def conversational_chat(self, query):
         """

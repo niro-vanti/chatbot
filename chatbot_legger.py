@@ -14,6 +14,7 @@ from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.chat_models import ChatOpenAI
 from langchain.chains import ConversationalRetrievalChain
 from langchain.vectorstores import FAISS
+from json2table import convert
 
 
 # To be able to update the changes made to modules in localhost,
@@ -50,12 +51,12 @@ def main():
     layout.show_header_txt()
     user_api_key = utils.load_api_key()
 
-
     if not user_api_key:
         layout.show_api_key_missing()
     else:
         os.environ["OPENAI_API_KEY"] = user_api_key
-        uploaded_file = utils.handle_upload_txt()
+        # uploaded_file = utils.handle_upload_txt()
+        uploaded_file = utils.handle_upload_ledger()
 
         if uploaded_file:
             history = ChatHistory()
@@ -66,25 +67,12 @@ def main():
 
             # st.write(string_data)
 
-
             try:
-                chatbot = utils.setup_chatbot_txt(
+                chatbot = utils.setup_chatbot_ledger(
                     uploaded_file, st.session_state["model"], st.session_state["temperature"]
                 )
+                # st.write(chatbot)
                 st.session_state["chatbot"] = chatbot
-
-                # agent = create_csv_agent(ChatOpenAI(temperature=0),
-                #                          uploaded_file_content,
-                #                          verbose=True,
-                #                          max_iterations=15)
-
-                # embeddings = OpenAIEmbeddings()
-                # vectors = FAISS.from_documents([uploaded_file], embeddings)
-
-                # agent = ConversationalRetrievalChain.from_llm(
-                #     llm=ChatOpenAI(temperature=0.0, model_name='gpt-3.5-turbo', openai_api_key=user_api_key),
-                #     retriever=vectors.as_retriever())
-                # st.session_state['agent'] = agent
                 st.session_state['agent'] = chatbot
 
                 if st.session_state["ready"]:
@@ -99,52 +87,11 @@ def main():
 
                         if is_ready:
                             history.append("user", user_input)
-                            output = st.session_state["chatbot"].conversational_chat(user_input)
-
+                            output = st.session_state["chatbot"].csv_agent(user_input)
+                            st.write(output)
                             history.append("assistant", output)
-                            # old_stdout = sys.stdout
-                            # sys.stdout = captured_output = StringIO()
-                            # agent_answer = chatbot.run(user_input)
-                            # sys.stdout = old_stdout
-                            # thoughts = captured_output.getvalue()
-                            #
-                            # cleaned_thoughts = re.sub(r'\x1b\[[0-9;]*[a-zA-Z]', '', thoughts)
-                            # cleaned_thoughts = re.sub(r'\[1m>', '', cleaned_thoughts)
-                            #
-                            # resp = cleaned_thoughts.split('Thought:')[-1].split('Final Answer')
-                            # thought = resp[0]
-                            # final_answer = resp[1].split('\n')[0].split(': ')[-1]
-                            # agent_answer_clean = '\n'.join([thought, final_answer])
-                            # full_answer = '\n'.join([output, agent_answer_clean])
-                            # history.append("assistant", full_answer)
 
                     history.generate_messages(response_container)
-
-                    # if st.session_state["show_csv_agent"]:
-                    #     query = st.text_input(
-                    #         label="Use CSV agent for precise information about the structure of your csv file",
-                    #         placeholder="ex : how many rows in my file ?")
-                    #     if query != "":
-                    #         old_stdout = sys.stdout
-                    #         sys.stdout = captured_output = StringIO()
-                    #         agent = create_csv_agent(ChatOpenAI(temperature=0),
-                    #                                  uploaded_file_content,
-                    #                                  verbose=True,
-                    #                                  max_iterations=4)
-                    #
-                    #
-                    #         result = agent.run(query)
-                    #
-                    #         sys.stdout = old_stdout
-                    #         thoughts = captured_output.getvalue()
-                    #
-                    #         cleaned_thoughts = re.sub(r'\x1b\[[0-9;]*[a-zA-Z]', '', thoughts)
-                    #         cleaned_thoughts = re.sub(r'\[1m>', '', cleaned_thoughts)
-                    #
-                    #         with st.expander("Afficher les pensées de l'agent"):
-                    #             st.write(cleaned_thoughts)
-                    #
-                    #         st.write(result)
 
             except Exception as e:
                 st.error(f"Error: {str(e)}")

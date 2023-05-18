@@ -38,6 +38,7 @@ class ChatHistory:
     def generate_messages(self, container):
         if st.session_state["assistant"]:
             with container:
+                # st.write(st.session_state['assistant'])
                 for i in range(len(st.session_state["assistant"])):
                     message(
                         st.session_state["user"][i],

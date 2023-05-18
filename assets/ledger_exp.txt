@@ -1,0 +1,416 @@
+﻿date
+$date 2023-05-01T00:00:00Z
+amount 1805
+description may rent
+transactionType Payment
+chargeCode
+transactionID 591312316
+balanceDue 0
+date
+$date 2023-05-01T00:00:00Z
+amount 75
+description Garage Rental - Posted from 05/01/2023 to 05/31/2023 - Rentable Item  ( Garage - Garage Units ( AA )
+transactionType Charge
+chargeCode 3
+transactionID 591300255
+balanceDue 1805
+date
+$date 2023-05-01T00:00:00Z
+amount 14
+description Resident Insurance - Posted from 05/01/2023 to 05/31/2023
+transactionType Charge
+chargeCode 3
+transactionID 591300250
+balanceDue 1730
+date
+$date 2023-05-01T00:00:00Z
+amount 70
+description RUBS - Posted from 05/01/2023 to 05/31/2023
+transactionType Charge
+chargeCode 3
+transactionID 591300169
+balanceDue 1716
+date
+$date 2023-05-01T00:00:00Z
+amount 1646
+description Rent - Posted from 05/01/2023 to 05/31/2023
+transactionType Charge
+chargeCode 2
+transactionID 591300131
+balanceDue 1646
+date
+$date 2023-04-01T00:00:00Z
+amount 75
+description Garage Rental - Posted from 04/01/2023 to 04/30/2023 - Rentable Item  ( Garage - Garage Units ( AA )
+transactionType Charge
+chargeCode 3
+transactionID 588412549
+balanceDue 0
+date
+$date 2023-04-01T00:00:00Z
+amount 70
+description RUBS - Posted from 04/01/2023 to 04/30/2023
+transactionType Charge
+chargeCode 3
+transactionID 588412484
+balanceDue -75
+date
+$date 2023-04-01T00:00:00Z
+amount 1646
+description Rent - Posted from 04/01/2023 to 04/30/2023
+transactionType Charge
+chargeCode 2
+transactionID 588412305
+balanceDue -145
+date
+$date 2023-03-31T00:00:00Z
+amount 1791
+description April rent
+transactionType Payment
+chargeCode
+transactionID 588224846
+balanceDue -1791
+date
+$date 2023-03-03T00:00:00Z
+amount 1791
+description March rent
+transactionType Payment
+chargeCode
+transactionID 584318217
+balanceDue 0
+date
+$date 2023-03-01T00:00:00Z
+amount 70
+description RUBS - Posted from 03/01/2023 to 03/31/2023
+transactionType Charge
+chargeCode 3
+transactionID 583405541
+balanceDue 1791
+date
+$date 2023-03-01T00:00:00Z
+amount 75
+description Garage Rental - Posted from 03/01/2023 to 03/31/2023 - Rentable Item  ( Garage - Garage Units ( AA )
+transactionType Charge
+chargeCode 3
+transactionID 583405463
+balanceDue 1721
+date
+$date 2023-03-01T00:00:00Z
+amount 1646
+description Rent - Posted from 03/01/2023 to 03/31/2023
+transactionType Charge
+chargeCode 2
+transactionID 583405325
+balanceDue 1646
+date
+$date 2023-02-03T00:00:00Z
+amount 1791
+description February rent
+transactionType Payment
+chargeCode
+transactionID 579065522
+balanceDue 0
+date
+$date 2023-02-01T00:00:00Z
+amount 70
+description RUBS - Posted from 02/01/2023 to 02/28/2023
+transactionType Charge
+chargeCode 3
+transactionID 578156418
+balanceDue 1791
+date
+$date 2023-02-01T00:00:00Z
+amount 1646
+description Rent - Posted from 02/01/2023 to 02/28/2023
+transactionType Charge
+chargeCode 2
+transactionID 578156225
+balanceDue 1721
+date
+$date 2023-02-01T00:00:00Z
+amount 75
+description Garage Rental - Posted from 02/01/2023 to 02/28/2023 - Rentable Item  ( Garage - Garage Units ( AA )
+transactionType Charge
+chargeCode 3
+transactionID 578156187
+balanceDue 75
+date
+$date 2023-01-01T00:00:00Z
+amount 75
+description Garage Rental - Posted from 01/01/2023 to 01/31/2023 - Rentable Item  ( Garage - Garage Units ( AA )
+transactionType Charge
+chargeCode 3
+transactionID 572085404
+balanceDue 0
+date
+$date 2023-01-01T00:00:00Z
+amount 1646
+description Rent - Posted from 01/01/2023 to 01/31/2023
+transactionType Charge
+chargeCode 2
+transactionID 572085176
+balanceDue -75
+date
+$date 2023-01-01T00:00:00Z
+amount 70
+description RUBS - Posted from 01/01/2023 to 01/31/2023
+transactionType Charge
+chargeCode 3
+transactionID 572085175
+balanceDue -1721
+date
+$date 2022-12-30T00:00:00Z
+amount 1791
+description January Rent
+transactionType Payment
+chargeCode
+transactionID 571665715
+balanceDue -1791
+date
+$date 2022-12-01T00:00:00Z
+amount 75
+description Garage Rental - Posted from 12/01/2022 to 12/31/2022 - Rentable Item  ( Garage - Garage Units ( AA )
+transactionType Charge
+chargeCode 3
+transactionID 544872334
+balanceDue 0
+date
+$date 2022-12-01T00:00:00Z
+amount 70
+description RUBS - Posted from 12/01/2022 to 12/31/2022
+transactionType Charge
+chargeCode 3
+transactionID 544872228
+balanceDue -75
+date
+$date 2022-12-01T00:00:00Z
+amount 1646
+description Rent - Posted from 12/01/2022 to 12/31/2022
+transactionType Charge
+chargeCode 2
+transactionID 544872187
+balanceDue -145
+date
+$date 2022-11-27T00:00:00Z
+amount 1791
+description Dec rent
+transactionType Payment
+chargeCode
+transactionID 543619342
+balanceDue -1791
+date
+$date 2022-11-01T00:00:00Z
+amount 1791
+description Nov rent
+transactionType Payment
+chargeCode
+transactionID 538666572
+balanceDue 0
+date
+$date 2022-11-01T00:00:00Z
+amount 75
+description Garage Rental - Posted from 11/01/2022 to 11/30/2022 - Rentable Item  ( Garage - Garage Units ( AA )
+transactionType Charge
+chargeCode 3
+transactionID 538424563
+balanceDue 1791
+date
+$date 2022-11-01T00:00:00Z
+amount 1646
+description Rent - Posted from 11/01/2022 to 11/30/2022
+transactionType Charge
+chargeCode 2
+transactionID 538424445
+balanceDue 1716
+date
+$date 2022-11-01T00:00:00Z
+amount 70
+description RUBS - Posted from 11/01/2022 to 11/30/2022
+transactionType Charge
+chargeCode 3
+transactionID 538424441
+balanceDue 70
+date
+$date 2022-10-21T00:00:00Z
+amount 10
+description eCheck Payment #1539400302 - Captured
+transactionType Payment
+chargeCode
+transactionID 536302929
+balanceDue 0
+date
+$date 2022-10-01T00:00:00Z
+amount 75
+description Garage Rental - Posted from 10/01/2022 to 10/31/2022 - Rentable Item  ( Garage - Garage Units ( AA )
+transactionType Charge
+chargeCode 3
+transactionID 532001440
+balanceDue 10
+date
+$date 2022-10-01T00:00:00Z
+amount 70
+description RUBS - Posted from 10/01/2022 to 10/31/2022
+transactionType Charge
+chargeCode 3
+transactionID 532001340
+balanceDue -65
+date
+$date 2022-10-01T00:00:00Z
+amount 1646
+description Rent - Posted from 10/01/2022 to 10/31/2022
+transactionType Charge
+chargeCode 2
+transactionID 532001281
+balanceDue -135
+date
+$date 2022-09-30T00:00:00Z
+amount 1781
+description Oct rent
+transactionType Payment
+chargeCode
+transactionID 531718456
+balanceDue -1781
+date
+$date 2022-09-30T00:00:00Z
+amount 4
+description Oct rent
+transactionType Payment
+chargeCode
+transactionID 531687647
+balanceDue 0
+date
+$date 2022-09-21T00:00:00Z
+amount 25
+description Garage Rental - Posted from 09/21/2022 to 09/30/2022 - Rentable Item  ( Garage - Garage Units ( AA )
+transactionType Charge
+chargeCode 3
+transactionID 529721967
+balanceDue 4
+date
+$date 2022-09-21T00:00:00Z
+amount 44
+description Garage Rental - Posted from 09/01/2022 to 09/20/2022 - Rentable Items ( Garage - Garage Units ( 5 ) 
+transactionType Charge
+chargeCode 3
+transactionID 529721804
+balanceDue -21
+date
+$date 2022-09-03T00:00:00Z
+amount 1781
+description September rent
+transactionType Payment
+chargeCode
+transactionID 526588165
+balanceDue -65
+date
+$date 2022-09-01T00:00:00Z
+amount 70
+description RUBS - Posted from 09/01/2022 to 09/30/2022
+transactionType Charge
+chargeCode 3
+transactionID 525076110
+balanceDue 1716
+date
+$date 2022-09-01T00:00:00Z
+amount 1646
+description Rent - Posted from 09/01/2022 to 09/30/2022
+transactionType Charge
+chargeCode 2
+transactionID 525075867
+balanceDue 1646
+date
+$date 2022-08-04T00:00:00Z
+amount 1645
+description Aug rent
+transactionType Payment
+chargeCode
+transactionID 518272353
+balanceDue 0
+date
+$date 2022-08-01T00:00:00Z
+amount 1520
+description Rent - Posted from 08/01/2022 to 08/31/2022
+transactionType Charge
+chargeCode 2
+transactionID 516585408
+balanceDue 1645
+date
+$date 2022-08-01T00:00:00Z
+amount 60
+description RUBS - Posted from 08/01/2022 to 08/31/2022
+transactionType Charge
+chargeCode 3
+transactionID 516585358
+balanceDue 125
+date
+$date 2022-08-01T00:00:00Z
+amount 65
+description Garage Rental - Posted from 08/01/2022 to 08/31/2022 - Rentable Items ( Garage -  ( 5 ) )
+transactionType Charge
+chargeCode 3
+transactionID 516585288
+balanceDue 65
+date
+$date 2022-07-01T00:00:00Z
+amount 1520
+description Rent - Posted from 07/01/2022 to 07/31/2022
+transactionType Charge
+chargeCode 2
+transactionID 511174142
+balanceDue 0
+date
+$date 2022-07-01T00:00:00Z
+amount 60
+description RUBS - Posted from 07/01/2022 to 07/31/2022
+transactionType Charge
+chargeCode 3
+transactionID 511173995
+balanceDue -1520
+date
+$date 2022-07-01T00:00:00Z
+amount 65
+description Garage Rental - Posted from 07/01/2022 to 07/31/2022 - Rentable Items ( Garage -  ( 5 ) )
+transactionType Charge
+chargeCode 3
+transactionID 511173953
+balanceDue -1580
+date
+$date 2022-06-27T00:00:00Z
+amount 1645
+description July rent
+transactionType Payment
+chargeCode
+transactionID 510569723
+balanceDue -1645
+date
+$date 2022-06-01T00:00:00Z
+amount 1640.05
+description June rent
+transactionType Payment
+chargeCode
+transactionID 506678644
+balanceDue 0
+date
+$date 2022-06-01T00:00:00Z
+amount 1520
+description Rent - Posted from 06/01/2022 to 06/30/2022
+transactionType Charge
+chargeCode 2
+transactionID 506451438
+balanceDue 1640.05
+date
+$date 2022-06-01T00:00:00Z
+amount 60
+description RUBS - Posted from 06/01/2022 to 06/30/2022
+transactionType Charge
+chargeCode 3
+transactionID 506451433
+balanceDue 120.05
+date
+$date 2022-06-01T00:00:00Z
+amount 65
+description Garage Rental - Posted from 06/01/2022 to 06/30/2022 - Rentable Items ( Garage -  ( 5 ) )
+transactionType Charge
+chargeCode 3
+transactionID 506451407
+balanceDue 60.05
