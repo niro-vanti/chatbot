@@ -2,8 +2,8 @@ import os
 import pandas as pd
 import streamlit as st
 from io import StringIO
-import json
-from json2table import convert
+# import json
+# from json2table import convert
 
 from src.modules.chatbot import Chatbot_txt, Chatbot, Chatbot_ledger
 from src.modules.embedder import Embedder_txt, Embedder
