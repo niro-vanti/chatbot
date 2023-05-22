@@ -7,8 +7,7 @@ import matplotlib.pyplot as plt
 import toml
 #
 #
-key = 'sk-Sr1286CInNN1FxVqTOzu' + 'T3BlbkFJi1eo1gRQED5dSj4KXyHn'
-'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'
+key = 'sk-PAwB8Px5csNP53rZwl29T'+'3BlbkFJVs5voehhqRr3SJBC65vJ'
 page_title = "Vanti chatBI"
 page_icon = ":money_with_wings:"  # emojis: https://www.webfx.com/tools/emoji-cheat-sheet/
 

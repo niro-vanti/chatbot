@@ -88,7 +88,16 @@ def main():
                         if is_ready:
                             history.append("user", user_input)
                             output = st.session_state["chatbot"].csv_agent(user_input)
-                            st.write(output)
+                            # st.text(sys.stdout)
+                            # st.text(StringIO.getvalue())
+                            old_stdout = sys.stdout
+                            sys.stdout = captured_output = StringIO()
+                            sys.stdout = old_stdout
+                            thoughts = captured_output.getvalue()
+                            # st.text(old_stdout)
+                            # st.text(captured_output)
+                            st.text('thoughts: '+thoughts)
+
                             history.append("assistant", output)
 
                     history.generate_messages(response_container)

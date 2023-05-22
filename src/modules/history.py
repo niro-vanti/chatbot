@@ -44,7 +44,7 @@ class ChatHistory:
                         st.session_state["user"][i],
                         is_user=True,
                         key=f"{i}_user",
-                        avatar_style="big-smile",
+                        avatar_style="fun-emoji",
                     )
                     message(st.session_state["assistant"][i], key=str(i), avatar_style="thumbs")
 
