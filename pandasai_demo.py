@@ -25,7 +25,7 @@ st.markdown(style_description, unsafe_allow_html=True)
 
 st.title("pandas-ai streamlit interface")
 
-st.write("A demo interface for [PandasAI](https://github.com/gventuri/pandas-ai)")
+# st.write("A demo interface for [PandasAI](https://github.com/gventuri/pandas-ai)")
 st.write(
     "Looking for an example *.csv-file?, check [here](https://gist.github.com/netj/8836201)."
 )
@@ -34,8 +34,10 @@ with st.sidebar:
     if "openai_key" not in st.session_state:
         with st.form("API key"):
             key = st.text_input("OpenAI Key", value="", type="password")
+            st.sidebar.text(key)
             if st.form_submit_button("Submit"):
                 st.session_state.openai_key = key
+                st.sidebar.write(key)
                 st.session_state.prompt_history = []
                 st.session_state.df = None
 
@@ -56,7 +58,13 @@ if "openai_key" in st.session_state:
             with st.spinner():
                 llm = OpenAI(api_token=st.session_state.openai_key)
                 pandas_ai = PandasAI(llm)
-                x = pandas_ai.run(st.session_state.df, prompt=question)
+                for i in range(10):
+                    try:
+                        x = pandas_ai.run(st.session_state.df, prompt=question)
+                        i = 11
+                        break
+                    except:
+                        dont_care=True
 
                 fig = plt.gcf()
                 if fig.get_axes():
@@ -68,8 +76,8 @@ if "openai_key" in st.session_state:
         st.subheader("Current dataframe:")
         st.write(st.session_state.df)
 
-    st.subheader("Prompt history:")
-    st.write(st.session_state.prompt_history)
+    with st.sidebar.expander("Prompt history:"):
+        st.write(st.session_state.prompt_history)
 
 
 if st.button("Clear"):
