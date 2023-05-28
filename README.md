@@ -1,5 +1,5 @@
 ---
-title: ChatCSV
+title: VantiGPT
 emoji: 🏢
 colorFrom: purple
 colorTo: yellow

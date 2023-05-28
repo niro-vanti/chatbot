@@ -12,11 +12,17 @@ memory = ConversationBufferMemory(
     memory_key="chat_history", return_messages=True)
 # st.text(st.secrets)
 # openai_api_key = st.secrets.openai_api_key_head+st.secrets.openai_api_key_tail
-anthropic_api_key = st.secrets.anthropic_api_key
-logger = get_logger(__name__)
+# anthropic_api_key = st.secrets.anthropic_api_key
 
-openai_api_key = st.secrets.openai_api_key_head+st.secrets.openai_api_key_tail
+openai_api_key_head = 'sk-9utMl6JfUfgm4lRIXmK'
+openai_api_key_tail = 'bT3BlbkFJBvNXhwDz9WJrzmi5G6FP'
+openai_api_key = openai_api_key_head+openai_api_key_tail
+anthropic_api_key = ""
+logger = get_logger(__name__)
 print('niro','niro', openai_api_key)
+
+
+
 
 
 def count_tokens(question, model):
