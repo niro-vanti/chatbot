@@ -16,13 +16,16 @@ from stats import get_usage_today
 supabase_url = 'https://ktexmliefragugupzmqw.supabase.co'
 
 # supabase_key = st.secrets.supabase_service_key
-supabase_service_key = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt0ZXhtbGllZnJhZ3VndXB6bXF3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODUyNjg1MjcsImV4cCI6MjAwMDg0NDUyN30.7DBDCcqelS0GNojPqv0zuvCT5vs5x2Codxyr5cDPZvU'
+supabase_key = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt0ZXhtbGllZnJhZ3VndXB6bXF3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODUyNjg1MjcsImV4cCI6MjAwMDg0NDUyN30.7DBDCcqelS0GNojPqv0zuvCT5vs5x2Codxyr5cDPZvU'
 
 # openai_api_key = st.secrets.openai_api_key
+openai_api_key_head = 'sk-9utMl6JfUfgm4lRIXmK'
+openai_api_key_tail = 'bT3BlbkFJBvNXhwDz9WJrzmi5G6FP'
+openai_api_key = openai_api_key_head+openai_api_key_tail
+# openai_api_key = st.secrets.openai_api_key_head+st.secrets.openai_api_key_tail
 
-openai_api_key = st.secrets.openai_api_key_head+st.secrets.openai_api_key_tail
-
-anthropic_api_key = st.secrets.anthropic_api_key
+# anthropic_api_key = st.secrets.anthropic_api_key
+anthropic_api_key = ''
 supabase: Client = create_client(supabase_url, supabase_key)
 self_hosted = st.secrets.self_hosted
 
