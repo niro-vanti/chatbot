@@ -10,9 +10,13 @@ from stats import add_usage
 
 memory = ConversationBufferMemory(
     memory_key="chat_history", return_messages=True)
-openai_api_key = st.secrets.openai_api_key_head+st.secrets.openai_api_key_tail
+# st.text(st.secrets)
+# openai_api_key = st.secrets.openai_api_key_head+st.secrets.openai_api_key_tail
 anthropic_api_key = st.secrets.anthropic_api_key
 logger = get_logger(__name__)
+
+openai_api_key = st.secrets.openai_api_key_head+st.secrets.openai_api_key_tail
+print('niro','niro', openai_api_key)
 
 
 def count_tokens(question, model):

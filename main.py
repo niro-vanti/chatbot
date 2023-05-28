@@ -15,6 +15,7 @@ from stats import get_usage_today
 supabase_url = st.secrets.supabase_url
 supabase_key = st.secrets.supabase_service_key
 # openai_api_key = st.secrets.openai_api_key
+
 openai_api_key = st.secrets.openai_api_key_head+st.secrets.openai_api_key_tail
 
 anthropic_api_key = st.secrets.anthropic_api_key
@@ -35,7 +36,6 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded",
 )
-
 
 st.title("🧠 VantiGPT - Your second brain 🧠")
 st.markdown("ask your data anything.")
