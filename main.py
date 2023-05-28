@@ -29,14 +29,14 @@ if anthropic_api_key:
 
 # Set the theme
 st.set_page_config(
-    page_title="Quivr",
+    page_title="VantiGPT",
     layout="wide",
     initial_sidebar_state="expanded",
 )
 
 
-st.title("🧠 Quivr - Your second brain 🧠")
-st.markdown("Store your knowledge in a vector store and query it with OpenAI's GPT-3/4.")
+st.title("🧠 VantiGPT - Your second brain 🧠")
+st.markdown("ask your data anything.")
 if self_hosted == "false":
     st.markdown('**📢 Note: In the public demo, access to functionality is restricted. You can only use the GPT-3.5-turbo model and upload files up to 1Mb. To use more models and upload larger files, consider self-hosting Quivr.**')
 
@@ -76,6 +76,7 @@ st.markdown("---\n\n")
 
 if user_choice == 'Add Knowledge':
     # Display chunk size and overlap selection only when adding knowledge
+    st.sidebar.image('assets/Images/Vanti - Main Logo@4x copy.png')
     st.sidebar.title("Configuration")
     st.sidebar.markdown(
         "Choose your chunk size and overlap for adding knowledge.")

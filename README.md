@@ -5,7 +5,7 @@ colorFrom: purple
 colorTo: yellow
 sdk: streamlit
 sdk_version: 1.19.0
-app_file: chatbot_csv.py
+app_file: main.py
 pinned: false
 python_version: 3.9
 ---
