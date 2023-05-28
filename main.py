@@ -88,10 +88,10 @@ user_choice = st.radio(
     "Choose an action", ('Add Knowledge', 'Chat with your Brain', 'Forget', "Explore"))
 
 st.markdown("---\n\n")
-
+st.sidebar.image('assets/Images/Vanti - Main Logo@4x copy.png')
 if user_choice == 'Add Knowledge':
     # Display chunk size and overlap selection only when adding knowledge
-    st.sidebar.image('assets/Images/Vanti - Main Logo@4x copy.png')
+    # st.sidebar.image('assets/Images/Vanti - Main Logo@4x copy.png')
     # user_api_key = st.sidebar.text_input(
     #     label="#### Your OpenAI API key 👇", placeholder="Paste your openAI API key, sk-", type="password"
     # )
