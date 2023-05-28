@@ -27,7 +27,8 @@ openai_api_key = openai_api_key_head+openai_api_key_tail
 # anthropic_api_key = st.secrets.anthropic_api_key
 anthropic_api_key = ''
 supabase: Client = create_client(supabase_url, supabase_key)
-self_hosted = st.secrets.self_hosted
+# self_hosted = st.secrets.self_hosted
+self_hosted = "true"
 
 embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key)
 vector_store = SupabaseVectorStore(
@@ -54,12 +55,17 @@ st.markdown("---\n\n")
 st.session_state["overused"] = False
 if self_hosted == "false":
     usage = get_usage_today(supabase)
-    if usage > st.secrets.usage_limit:
+    # if usage > st.secrets.usage_limit:
+    if usage > 1000:
         st.markdown(
-            f"<span style='color:red'>You have used {usage} tokens today, which is more than your daily limit of {st.secrets.usage_limit} tokens. Please come back later or consider self-hosting.</span>", unsafe_allow_html=True)
+            # f"<span style='color:red'>You have used {usage} tokens today, which is more than your daily limit of {st.secrets.usage_limit} tokens. Please come back later or consider self-hosting.</span>", unsafe_allow_html=True)
+            f"<span style='color:red'>You have used {usage} tokens today, which is more than your daily limit of {1000} tokens. Please come back later or consider self-hosting.</span>", unsafe_allow_html = True)
+
         st.session_state["overused"] = True
     else:
-        st.markdown(f"<span style='color:blue'>Usage today: {usage} tokens out of {st.secrets.usage_limit}</span>", unsafe_allow_html=True)
+        # st.markdown(f"<span style='color:blue'>Usage today: {usage} tokens out of {st.secrets.usage_limit}</span>", unsafe_allow_html=True)
+        st.markdown(f"<span style='color:blue'>Usage today: {usage} tokens out of {1000}</span>", unsafe_allow_html=True)
+
     st.write("---")
     
 
@@ -118,7 +124,8 @@ elif user_choice == 'Chat with your Brain':
         st.session_state['model'] = "gpt-3.5-turbo"
     st.session_state['temperature'] = st.sidebar.slider(
         "Select Temperature", 0.0, 1.0, st.session_state['temperature'], 0.1)
-    if st.secrets.self_hosted != "false":
+    # if st.secrets.self_hosted != "false":
+    if "true" != "false":
         st.session_state['max_tokens'] = st.sidebar.slider(
             "Select Max Tokens", 256, 2048, st.session_state['max_tokens'], 2048)
     else:
