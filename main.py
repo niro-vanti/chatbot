@@ -45,7 +45,7 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-st.title("🧠 VantiGPT - Your second brain 🧠")
+st.title("🧠 VantiGPT")
 st.markdown("ask your data anything.")
 if self_hosted == "false":
     st.markdown('**📢 Note: In the public demo, access to functionality is restricted. You can only use the GPT-3.5-turbo model and upload files up to 1Mb. To use more models and upload larger files, consider self-hosting Quivr.**')
