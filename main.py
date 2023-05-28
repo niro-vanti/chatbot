@@ -25,9 +25,12 @@ openai_api_key = openai_api_key_head+openai_api_key_tail
 # openai_api_key = st.secrets.openai_api_key_head+st.secrets.openai_api_key_tail
 
 # anthropic_api_key = st.secrets.anthropic_api_key
+st.secrets.anthropic_api_key = ""
+st.secrets.usage_limit = 1000
 anthropic_api_key = ''
 supabase: Client = create_client(supabase_url, supabase_key)
 # self_hosted = st.secrets.self_hosted
+st.secrets.self_hosted = "true"
 self_hosted = "true"
 
 embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key)
