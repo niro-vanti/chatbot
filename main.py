@@ -14,7 +14,9 @@ from stats import get_usage_today
 
 supabase_url = st.secrets.supabase_url
 supabase_key = st.secrets.supabase_service_key
-openai_api_key = st.secrets.openai_api_key
+# openai_api_key = st.secrets.openai_api_key
+openai_api_key = st.secrets.openai_api_key_head+st.secrets.openai_api_key_tail
+
 anthropic_api_key = st.secrets.anthropic_api_key
 supabase: Client = create_client(supabase_url, supabase_key)
 self_hosted = st.secrets.self_hosted
@@ -77,6 +79,9 @@ st.markdown("---\n\n")
 if user_choice == 'Add Knowledge':
     # Display chunk size and overlap selection only when adding knowledge
     st.sidebar.image('assets/Images/Vanti - Main Logo@4x copy.png')
+    # user_api_key = st.sidebar.text_input(
+    #     label="#### Your OpenAI API key 👇", placeholder="Paste your openAI API key, sk-", type="password"
+    # )
     st.sidebar.title("Configuration")
     st.sidebar.markdown(
         "Choose your chunk size and overlap for adding knowledge.")
