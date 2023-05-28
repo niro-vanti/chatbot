@@ -170,7 +170,7 @@ def filter_file(file, supabase, vector_store):
     return False
 
 def url_uploader(supabase, vector_store):
-    url = st.text_area("**Add an url**",placeholder="https://www.quivr.app")
+    url = st.text_area("**Add an url**",placeholder="vanti.ai")
     button = st.button("Add the URL to the database")
 
     if button:

@@ -78,7 +78,7 @@ def chat_with_doc(model, vector_store: SupabaseVectorStore, stats_db):
             model_response = qa({"question": question})
             logger.info('Result: %s', model_response)
 
-            st.session_state['chat_history'].append(("Quivr", model_response["answer"]))
+            st.session_state['chat_history'].append(("Vanti", model_response["answer"]))
 
             # Display chat history
             st.empty()
