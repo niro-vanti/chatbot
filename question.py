@@ -16,13 +16,9 @@ memory = ConversationBufferMemory(
 
 openai_api_key_head = 'sk-9utMl6JfUfgm4lRIXmK'
 openai_api_key_tail = 'bT3BlbkFJBvNXhwDz9WJrzmi5G6FP'
-openai_api_key = openai_api_key_head+openai_api_key_tail
+openai_api_key = openai_api_key_head + openai_api_key_tail
 anthropic_api_key = ""
 logger = get_logger(__name__)
-print('niro','niro', openai_api_key)
-
-
-
 
 
 def count_tokens(question, model):
@@ -33,12 +29,9 @@ def count_tokens(question, model):
 
 
 def chat_with_doc(model, vector_store: SupabaseVectorStore, stats_db):
-    
     if 'chat_history' not in st.session_state:
         st.session_state['chat_history'] = []
-        
-    
-    
+
     question = st.text_area("## Ask a question")
     columns = st.columns(3)
     with columns[0]:
@@ -47,9 +40,7 @@ def chat_with_doc(model, vector_store: SupabaseVectorStore, stats_db):
         count_button = st.button("Count Tokens", type='secondary')
     with columns[2]:
         clear_history = st.button("Clear History", type='secondary')
-    
-    
-    
+
     if clear_history:
         # Clear memory in Langchain
         memory.clear()
@@ -59,19 +50,24 @@ def chat_with_doc(model, vector_store: SupabaseVectorStore, stats_db):
     if button:
         qa = None
         if not st.session_state["overused"]:
-            add_usage(stats_db, "chat", "prompt" + question, {"model": model, "temperature": st.session_state['temperature']})
+            add_usage(stats_db, "chat", "prompt" + question,
+                      {"model": model, "temperature": st.session_state['temperature']})
             if model.startswith("gpt"):
                 logger.info('Using OpenAI model %s', model)
                 qa = ConversationalRetrievalChain.from_llm(
                     OpenAI(
-                        model_name=st.session_state['model'], openai_api_key=openai_api_key, temperature=st.session_state['temperature'], max_tokens=st.session_state['max_tokens']), vector_store.as_retriever(), memory=memory, verbose=True)
+                        model_name=st.session_state['model'], openai_api_key=openai_api_key,
+                        temperature=st.session_state['temperature'], max_tokens=st.session_state['max_tokens']),
+                    vector_store.as_retriever(), memory=memory, verbose=True)
             elif anthropic_api_key and model.startswith("claude"):
                 logger.info('Using Anthropics model %s', model)
                 qa = ConversationalRetrievalChain.from_llm(
                     ChatAnthropic(
-                        model=st.session_state['model'], anthropic_api_key=anthropic_api_key, temperature=st.session_state['temperature'], max_tokens_to_sample=st.session_state['max_tokens']), vector_store.as_retriever(), memory=memory, verbose=True, max_tokens_limit=102400)
-            
-            
+                        model=st.session_state['model'], anthropic_api_key=anthropic_api_key,
+                        temperature=st.session_state['temperature'],
+                        max_tokens_to_sample=st.session_state['max_tokens']), vector_store.as_retriever(),
+                    memory=memory, verbose=True, max_tokens_limit=102400)
+
             st.session_state['chat_history'].append(("You", question))
 
             # Generate model's response and add it to chat history
@@ -86,6 +82,6 @@ def chat_with_doc(model, vector_store: SupabaseVectorStore, stats_db):
                 st.markdown(f"**{speaker}:** {text}")
         else:
             st.error("You have used all your free credits. Please try again later or self host.")
-        
+
     if count_button:
         st.write(count_tokens(question, model))

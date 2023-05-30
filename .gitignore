@@ -155,3 +155,5 @@ cython_debug/
 
 *.pkl
 *.csv
+colleen.py
+assets/Images/colleen-logo.png
